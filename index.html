@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classificazione Prodotto</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+
+    <div id="quiz-box">
+
+      <div class="top-bar">
+        <div id="progress"></div>
+      </div>
+
+      <h1 id="question">Domanda</h1>
+
+      <div id="answers" class="answers"></div>
+
+    </div>
+
+    <div id="result-box" class="hidden">
+      <h1>Classificazione completata</h1>
+
+      <div class="result-card">
+        <h2 id="result-title"></h2>
+        <p id="result-description"></p>
+      </div>
+
+      <button onclick="restartQuiz()">
+        Ricomincia
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
