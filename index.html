@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <link rel="icon" type="image/png" href="logo/logo_no_sfondo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Classificazione Prodotto</title>
@@ -9,8 +10,44 @@
 <body>
 
   <div class="container">
+    <div class="logo-container">
+      <a href="https://radiomotive.it/">
+      <img src="logo/logo_no_sfondo.png" alt="Logo Azienda" class="logo">
+      </a>
+    </div>
 
-    <div id="quiz-box">
+    <!-- INTRO -->
+    <div id="intro-box">
+
+      
+
+      <p class="intro-text">
+        Questo questionario ti permetterà di classificare il <b>tuo prodotto</b> 
+        in una delle 4 classi disponibili.
+
+        Ti verranno mostrate <b>10 domande</b> rapide.
+        Per ogni domanda dovrai scegliere una delle 4 opzioni disponibili.
+        <br>
+        Al termine riceverai la classificazione finale
+
+        
+        
+      </p>
+
+      <button onclick="startQuiz()">
+        Inizia
+      </button>
+
+      <p class="allert">
+        Ci teniamo a precisare che questa <b>NON</b> è una classificazione ufficiale ai termini 
+        del regolamento UE 2024/2847, ma una approssimativa basata su domande inerenti ai 
+        fattori di valutazione
+      </p>
+
+    </div>
+
+    <!-- QUIZ -->
+    <div id="quiz-box" class="hidden">
 
       <div class="top-bar">
         <div id="progress"></div>
@@ -22,21 +59,79 @@
 
     </div>
 
+    <!-- LOADING SCREEN -->
+<div id="loading-screen" class="hidden">
+
+  <div class="loading-content">
+
+    <img
+      src="logo/logo_no_sfondo.png"
+      alt="Logo"
+      class="loading-logo"
+    >
+
+    <p class="loading-text">
+      Attendi...
+    </p>
+
+    <div class="loading-bar">
+
+      <div id="loading-progress"></div>
+
+    </div>
+
+  </div>
+
+</div>
+    <!-- RISULTATO -->
     <div id="result-box" class="hidden">
+
       <h1>Classificazione completata</h1>
 
       <div class="result-card">
         <h2 id="result-title"></h2>
         <p id="result-description"></p>
       </div>
+      
+<div class="pro-box">
 
-      <button onclick="restartQuiz()">
+  <h3>
+    Vuoi una valutazione professionale?
+  </h3>
+
+  <p class="pro-text">
+
+    Questa classificazione rappresenta una prima
+    stima indicativa basata sulle informazioni fornite.
+
+    <br><br>
+
+    Per ottenere una valutazione tecnica completa,
+    conforme ai requisiti del regolamento europeo
+    CRA (Cyber Resilience Act),
+    il nostro team può effettuare
+    un’analisi approfondita del prodotto,
+    identificando la reale classe di appartenenza
+    e gli eventuali requisiti di conformità.
+
+  </p>
+
+  <a
+    href="mailto:generale@radiomotive.it"
+    class="pro-button"
+  >
+    Richiedi una valutazione completa
+  </a>
+
+</div>
+    <div class="buttfin"> 
+      <button class="" onclick="restartQuiz()">
         Ricomincia
       </button>
     </div>
 
-  </div>
-
+</div>
+  
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,92 +1,92 @@
 const questions = [
   {
-    question: "Quanto è premium il prodotto?",
+    question: "Qual è il contesto di utilizzo previsto del prodotto?",
     answers: [
-      { text: "Molto basso", value: 1 },
-      { text: "Basso", value: 2 },
-      { text: "Alto", value: 3 },
-      { text: "Molto alto", value: 4 }
+      { text: "Uso personale/hobbistico, nessun contesto critico", value: 0 },
+      { text: "Uso aziendale generale (ufficio, produttività)", value: 2 },
+      { text: "Utilizzo in infrastrutture aziendali sensibili o PA", value: 5 },
+      { text: "Infrastrutture critiche (energia, sanità, trasporti, finanza)", value: 8 }
     ]
   },
   {
-    question: "Quanto è innovativo?",
+    question: "Il prodotto gestisce o processa dati personali o sensibili?",
     answers: [
-      { text: "Per nulla", value: 1 },
-      { text: "Poco", value: 2 },
-      { text: "Abbastanza", value: 3 },
-      { text: "Molto", value: 4 }
+      { text: "No, nessun dato personale", value: 0 },
+      { text: "Dati personali comuni in modo limitato", value: 2 },
+      { text: "Dati personali su larga scala o dati di categorie speciali", value: 5 },
+      { text: "Dati sanitari, biometrici o finanziari ad alta sensibilità", value: 8 }
     ]
   },
   {
-    question: "Qual è il prezzo percepito?",
+    question: "Qual è il livello di connettività di rete del prodotto?",
     answers: [
-      { text: "Economico", value: 1 },
-      { text: "Accessibile", value: 2 },
-      { text: "Costoso", value: 3 },
-      { text: "Luxury", value: 4 }
+      { text: "Nessuna connessione di rete (air-gapped)", value: 0 },
+      { text: "Connettività limitata/locale (LAN, intranet)", value: 2 },
+      { text: "Connesso a internet con funzioni limitate", value: 4 },
+      { text: "Costantemente connesso, esposto a internet, API pubbliche", value: 6 }
     ]
   },
   {
-    question: "Quanto è tecnologico?",
+    question: "Il prodotto ha accesso privilegiato a sistemi o risorse critiche?",
     answers: [
-      { text: "Base", value: 1 },
-      { text: "Normale", value: 2 },
-      { text: "Avanzato", value: 3 },
-      { text: "Futuristico", value: 4 }
+      { text: "Nessun accesso privilegiato", value: 0 },
+      { text: "Accesso limitato a risorse di sistema standard", value: 2 },
+      { text: "Accesso a risorse aziendali sensibili (AD, database critici)", value: 4 },
+      { text: "Accesso privilegiato a sistemi critici o industriali (OT/ICS)", value: 7 }
     ]
   },
   {
-    question: "Quanto è esclusivo?",
+    question: "Qual è l'impatto potenziale di una violazione della sicurezza?",
     answers: [
-      { text: "Comune", value: 1 },
-      { text: "Poco esclusivo", value: 2 },
-      { text: "Esclusivo", value: 3 },
-      { text: "Molto esclusivo", value: 4 }
+      { text: "Impatto minimo, nessun danno significativo", value: 0 },
+      { text: "Impatto lieve su dati o operatività limitata", value: 2 },
+      { text: "Interruzione di servizi aziendali o perdita di dati significativa", value: 5 },
+      { text: "Rischio per la sicurezza pubblica, danni diffusi o perdite finanziarie gravi", value: 8 }
     ]
   },
   {
-    question: "Quanto è sostenibile?",
+    question: "Il prodotto è destinato ad essere integrato in altri sistemi o è autonomo?",
     answers: [
-      { text: "Per nulla", value: 1 },
-      { text: "Poco", value: 2 },
-      { text: "Molto", value: 3 },
-      { text: "Completamente", value: 4 }
+      { text: "Prodotto autonomo, nessuna integrazione", value: 0 },
+      { text: "Integrazione con sistemi non critici tramite API standard", value: 1 },
+      { text: "Componente integrato in sistemi aziendali complessi", value: 3 },
+      { text: "Componente core di infrastrutture critiche o sistemi embedded", value: 5 }
     ]
   },
   {
-    question: "Quanto è richiesto dal mercato?",
+    question: "Quanti utenti o sistemi dipendono dal prodotto?",
     answers: [
-      { text: "Poco", value: 1 },
-      { text: "Medio", value: 2 },
-      { text: "Alto", value: 3 },
-      { text: "Altissimo", value: 4 }
+      { text: "Meno di 10 utenti/sistemi", value: 0 },
+      { text: "Da 10 a 500 utenti/sistemi", value: 1 },
+      { text: "Da 500 a 50.000 utenti/sistemi", value: 3 },
+      { text: "Oltre 50.000 utenti o sistemi critici dipendenti", value: 5 }
     ]
   },
   {
-    question: "Quanto è differenziato dai competitor?",
+    question: "Qual è il livello di aggiornabilità e patch del prodotto?",
     answers: [
-      { text: "Per nulla", value: 1 },
-      { text: "Poco", value: 2 },
-      { text: "Abbastanza", value: 3 },
-      { text: "Molto", value: 4 }
+      { text: "Aggiornamenti automatici frequenti e verificati", value: 0 },
+      { text: "Aggiornamenti manuali periodici, processo documentato", value: 1 },
+      { text: "Aggiornamenti rari o complessi, richiede downtime", value: 3 },
+      { text: "Non aggiornabile o con ciclo di vita molto lungo (es. firmware fisso)", value: 5 }
     ]
   },
   {
-    question: "Quanto è scalabile?",
+    question: "Il prodotto include funzionalità crittografiche o di autenticazione?",
     answers: [
-      { text: "Per nulla", value: 1 },
-      { text: "Limitatamente", value: 2 },
-      { text: "Molto", value: 3 },
-      { text: "Estremamente", value: 4 }
+      { text: "Nessuna funzione crittografica o di autenticazione", value: 0 },
+      { text: "Autenticazione base (password), crittografia standard", value: 1 },
+      { text: "Gestione avanzata di identità, SSO, crittografia end-to-end", value: 3 },
+      { text: "Infrastruttura PKI, HSM, gestione certificati o root of trust", value: 5 }
     ]
   },
   {
-    question: "Quanto è forte il branding?",
+    question: "Il prodotto è già soggetto ad altri regolamenti settoriali di sicurezza informatica?",
     answers: [
-      { text: "Debole", value: 1 },
-      { text: "Normale", value: 2 },
-      { text: "Forte", value: 3 },
-      { text: "Iconico", value: 4 }
+      { text: "Nessun altro regolamento applicabile", value: 0 },
+      { text: "Soggetto a regolamenti generici (es. GDPR, ISO 27001)", value: 1 },
+      { text: "Soggetto a NIS2 o DORA come entità importante", value: 3 },
+      { text: "Soggetto a NIS2 come entità essenziale, MDR, IEC 62443 o equivalenti", value: 5 }
     ]
   }
 ];
@@ -103,6 +103,19 @@ const resultBox = document.getElementById("result-box");
 
 const resultTitle = document.getElementById("result-title");
 const resultDescription = document.getElementById("result-description");
+
+function startQuiz() {
+
+  document
+    .getElementById("intro-box")
+    .classList.add("hidden");
+
+  document
+    .getElementById("quiz-box")
+    .classList.remove("hidden");
+
+  showQuestion();
+}
 
 function showQuestion() {
 
@@ -137,7 +150,7 @@ function selectAnswer(value) {
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
-    showResult();
+    showLoadingScreen();
   }
 }
 
@@ -149,6 +162,60 @@ function updateProgress() {
   progressEl.style.width = `${progress}%`;
 }
 
+function showLoadingScreen() {
+
+  quizBox.classList.add("hidden");
+
+  document
+    .getElementById("loading-screen")
+    .classList.remove("hidden");
+
+  const progress =
+    document.getElementById("loading-progress");
+
+  let current = 0;
+
+  // Incrementi casuali
+  const fakeSteps = [
+    7,
+    13,
+    21,
+    28,
+    41,
+    49,
+    63,
+    69,
+    74,
+    81,
+    87,
+    91,
+    94,
+    97,
+    100
+  ];
+
+  fakeSteps.forEach((value, index) => {
+
+    setTimeout(() => {
+
+      progress.style.width = value + "%";
+
+    }, index * 650);
+
+  });
+
+  // Dopo 10 secondi mostra risultato
+  setTimeout(() => {
+
+    document
+      .getElementById("loading-screen")
+      .classList.add("hidden");
+
+    showResult();
+
+  }, 10000);
+}
+
 function showResult() {
 
   quizBox.classList.add("hidden");
@@ -158,27 +225,27 @@ function showResult() {
   let description = "";
 
   if (totalScore <= 15) {
-    classification = "Classe A";
+    classification = "Prodotto di classe Default";
     description =
-      "Prodotto entry-level con basso posizionamento strategico.";
+      "Il vostro prodotto è considerato come il prodotto più semplice tra i prodotti digitali, ma deve comunque rispettare tutte gli standard che la direttiva stabilisce.";
   }
 
   else if (totalScore <= 25) {
-    classification = "Classe B";
+    classification = "Prodotto digitale importante di classe 1";
     description =
-      "Prodotto con buon potenziale e discreto posizionamento.";
+      "Il prodotto è risultato un prodotto digitale importante, che necessità un attenzione particolare";
   }
 
   else if (totalScore <= 35) {
-    classification = "Classe C";
+    classification = "Prodotto digitale importante di classe 2";
     description =
-      "Prodotto competitivo con caratteristiche avanzate.";
+      "Il vostro prodotto potrebbe causare danni importanti in caso di manomissione, per questo motivo il Cyber Resilience Act lo tratta in maniera dettagliata.";
   }
 
   else {
-    classification = "Classe D";
+    classification = "Prodotto critico";
     description =
-      "Prodotto premium con alto valore strategico.";
+      "Il vostro prodotto è fondamentale per la sicurezza dell'ambiente in cui opera, per questo è fondamentale che sia perfettamente allineato con lo standard.";
   }
 
   resultTitle.innerText = classification;
@@ -196,4 +263,4 @@ function restartQuiz() {
   showQuestion();
 }
 
-showQuestion();
+// Il quiz parte solo dopo il click su "Inizia"
