@@ -121,6 +121,9 @@ function showQuestion() {
 
   const current = questions[currentQuestion];
 
+  const counter = document.getElementById("question-counter");
+  if (counter) counter.innerText = `${currentQuestion + 1} / ${questions.length}`;
+
   questionEl.innerText = current.question;
 
   answersEl.innerHTML = "";
@@ -223,30 +226,35 @@ function showResult() {
 
   let classification = "";
   let description = "";
+const resultCard = document.querySelector(".result-card");
 
-  if (totalScore <= 15) {
-    classification = "Prodotto di classe Default";
-    description =
-      "Il vostro prodotto è considerato come il prodotto più semplice tra i prodotti digitali, ma deve comunque rispettare tutte gli standard che la direttiva stabilisce.";
-  }
-
-  else if (totalScore <= 25) {
-    classification = "Prodotto digitale importante di classe 1";
-    description =
-      "Il prodotto è risultato un prodotto digitale importante, che necessità un attenzione particolare";
-  }
-
-  else if (totalScore <= 35) {
-    classification = "Prodotto digitale importante di classe 2";
-    description =
-      "Il vostro prodotto potrebbe causare danni importanti in caso di manomissione, per questo motivo il Cyber Resilience Act lo tratta in maniera dettagliata.";
-  }
-
-  else {
-    classification = "Prodotto critico";
-    description =
-      "Il vostro prodotto è fondamentale per la sicurezza dell'ambiente in cui opera, per questo è fondamentale che sia perfettamente allineato con lo standard.";
-  }
+if (totalScore <= 15) {
+  classification = "Prodotto di classe Default";
+  description = "Il vostro prodotto è considerato come il prodotto più semplice tra i prodotti digitali, ma deve comunque rispettare tutte gli standard che la direttiva stabilisce.";
+  resultCard.style.background = "#85ea85";
+  resultCard.style.borderColor = "#659a65";
+}
+else if (totalScore <= 25) {
+  classification = "Prodotto digitale importante di classe 1";
+  description = "Il prodotto è risultato un prodotto digitale importante, che necessità un attenzione particolare";
+  resultCard.style.background = "#fff4e0";
+  resultCard.style.borderColor = "#f0d080";
+}
+else if (totalScore <= 35) {
+  classification = "Prodotto digitale importante di classe 2";
+  description = "Il vostro prodotto potrebbe causare danni importanti in caso di manomissione, per questo motivo il Cyber Resilience Act lo tratta in maniera dettagliata.";
+  resultCard.style.background = "#ffeaea";
+  resultCard.style.borderColor = "#f0b0b0";
+}
+else {
+  classification = "Prodotto critico";
+  description = "Il vostro prodotto è fondamentale per la sicurezza dell'ambiente in cui opera, per questo è fondamentale che sia perfettamente allineato con lo standard.";
+  resultCard.style.background = "#1a0a0a";
+  resultCard.style.borderColor = "#6a1010";
+  resultCard.style.color = "#ff6060";
+  resultCard.querySelector("h2").style.color = "#ff6060";
+  resultCard.querySelector("p").style.color = "rgba(255,150,150,0.85)";
+}
 
   resultTitle.innerText = classification;
   resultDescription.innerText = description;

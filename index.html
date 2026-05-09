@@ -4,44 +4,78 @@
   <link rel="icon" type="image/png" href="logo/logo_no_sfondo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Classificazione Prodotto</title>
+  <title>CRA Classifier · Radiomotive</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <div class="grid-bg" aria-hidden="true"></div>
+
   <div class="container">
+
     <div class="logo-container">
-      <a href="https://radiomotive.it/">
-      <img src="logo/logo_no_sfondo.png" alt="Logo Azienda" class="logo">
+      <a href="https://radiomotive.it/" aria-label="Radiomotive">
+        <img src="logo/logo_no_sfondo.png" alt="Radiomotive" class="logo">
       </a>
     </div>
 
     <!-- INTRO -->
     <div id="intro-box">
 
-      
+      <div class="intro-badge">
+        <span class="badge-dot"></span>
+        Direttiva UE 2024/2847 — Cyber Resilience Act
+      </div>
 
-      <p class="intro-text">
-        Questo questionario ti permetterà di classificare il <b>tuo prodotto</b> 
-        in una delle 4 classi disponibili.
+      <h1 class="intro-heading">
+        Il tuo prodotto digitale<br>
+        <em class="heading-accent">è conforme al CRA?</em>
+      </h1>
 
-        Ti verranno mostrate <b>10 domande</b> rapide.
-        Per ogni domanda dovrai scegliere una delle 4 opzioni disponibili.
-        <br>
-        Al termine riceverai la classificazione finale
-
-        
-        
+      <p class="intro-lead">
+        Dall'11 Dicembre 2027 ogni prodotto digitale venduto in Europa dovrà rispettare 
+        il <strong>Cyber Resilience Act</strong>. La classe di appartenenza 
+        determina gli obblighi di conformità, i test di sicurezza richiesti 
+        e le potenziali sanzioni in caso di violazione.
+        <br><br>
+        Rispondi a 10 domande e scopri subito in quale categoria rientra il tuo prodotto.
       </p>
 
-      <button onclick="startQuiz()">
-        Inizia
+      <div class="intro-stats">
+        <div class="stat-item">
+          <span class="stat-num">10</span>
+          <span class="stat-label">domande</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">classi di rischio</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-item">
+          <span class="stat-num">~3'</span>
+          <span class="stat-label">per completarlo</span>
+        </div>
+      </div>
+
+      <div class="class-strip">
+        <div class="class-chip chip-default">Default</div>
+        <div class="class-chip chip-1">Importante classe I</div>
+        <div class="class-chip chip-2">Importante classe II</div>
+        <div class="class-chip chip-critical">Critico</div>
+      </div>
+
+      <button class="btn-start" onclick="startQuiz()">
+        Scopri la tua classe
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
 
-      <p class="allert">
-        Ci teniamo a precisare che questa <b>NON</b> è una classificazione ufficiale ai termini 
-        del regolamento UE 2024/2847, ma una approssimativa basata su domande inerenti ai 
-        fattori di valutazione
+      <p class="intro-disclaimer">
+        Stima indicativa — non sostituisce una valutazione tecnica ufficiale 
+        ai sensi del regolamento UE 2024/2847.
       </p>
 
     </div>
@@ -49,40 +83,29 @@
     <!-- QUIZ -->
     <div id="quiz-box" class="hidden">
 
-      <div class="top-bar">
-        <div id="progress"></div>
+      <div class="quiz-meta">
+        <span id="question-counter" class="q-counter">1 / 10</span>
+        <div class="top-bar">
+          <div id="progress"></div>
+        </div>
       </div>
 
       <h1 id="question">Domanda</h1>
-
       <div id="answers" class="answers"></div>
 
     </div>
 
     <!-- LOADING SCREEN -->
-<div id="loading-screen" class="hidden">
-
-  <div class="loading-content">
-
-    <img
-      src="logo/logo_no_sfondo.png"
-      alt="Logo"
-      class="loading-logo"
-    >
-
-    <p class="loading-text">
-      Attendi...
-    </p>
-
-    <div class="loading-bar">
-
-      <div id="loading-progress"></div>
-
+    <div id="loading-screen" class="hidden">
+      <div class="loading-content">
+        <img src="logo/logo_no_sfondo.png" alt="Logo" class="loading-logo">
+        <p class="loading-text">Analisi in corso…</p>
+        <div class="loading-bar">
+          <div id="loading-progress"></div>
+        </div>
+      </div>
     </div>
 
-  </div>
-
-</div>
     <!-- RISULTATO -->
     <div id="result-box" class="hidden">
 
@@ -92,46 +115,31 @@
         <h2 id="result-title"></h2>
         <p id="result-description"></p>
       </div>
-      
-<div class="pro-box">
 
-  <h3>
-    Vuoi una valutazione professionale?
-  </h3>
+      <div class="pro-box">
+        <h3>Vuoi una valutazione professionale?</h3>
+        <p class="pro-text">
+          Questa classificazione rappresenta una prima stima indicativa basata 
+          sulle informazioni fornite.
+          <br><br>
+          Per ottenere una valutazione tecnica completa, conforme ai requisiti 
+          del regolamento europeo CRA, il nostro team può effettuare un'analisi 
+          approfondita del prodotto, identificando la reale classe di appartenenza 
+          e gli eventuali requisiti di conformità.
+        </p>
+        <a href="mailto:vincenzo.lafragola@radiomotive.it" class="pro-button">
+          Richiedi una valutazione completa
+        </a>
+      </div>
 
-  <p class="pro-text">
+      <div class="buttfin">
+        <button onclick="restartQuiz()">Ricomincia</button>
+      </div>
 
-    Questa classificazione rappresenta una prima
-    stima indicativa basata sulle informazioni fornite.
-
-    <br><br>
-
-    Per ottenere una valutazione tecnica completa,
-    conforme ai requisiti del regolamento europeo
-    CRA (Cyber Resilience Act),
-    il nostro team può effettuare
-    un’analisi approfondita del prodotto,
-    identificando la reale classe di appartenenza
-    e gli eventuali requisiti di conformità.
-
-  </p>
-
-  <a
-    href="mailto:generale@radiomotive.it"
-    class="pro-button"
-  >
-    Richiedi una valutazione completa
-  </a>
-
-</div>
-    <div class="buttfin"> 
-      <button class="" onclick="restartQuiz()">
-        Ricomincia
-      </button>
     </div>
 
-</div>
-  
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
