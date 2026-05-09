@@ -552,10 +552,10 @@ button:hover {
   .logo { width: 120px; }
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .answer-btn:hover {
     border-color: var(--navy);
-    background: var(--white);
+    background: var(--navy-mid); /* Cambiato per visibilità */
     color: var(--white);
     transform: translateX(4px);
   }

@@ -118,26 +118,23 @@ function startQuiz() {
 }
 
 function showQuestion() {
-
   const current = questions[currentQuestion];
-
   const counter = document.getElementById("question-counter");
   if (counter) counter.innerText = `${currentQuestion + 1} / ${questions.length}`;
 
   questionEl.innerText = current.question;
-
   answersEl.innerHTML = "";
 
   current.answers.forEach(answer => {
-
     const button = document.createElement("button");
-
     button.classList.add("answer-btn");
-
     button.innerText = answer.text;
 
-    button.onclick = () => selectAnswer(answer.value);
+    // RESET DELLO STILE INLINE (Per sicurezza su mobile)
+    button.style.backgroundColor = "";
+    button.style.color = "";
 
+    button.onclick = () => selectAnswer(answer.value);
     answersEl.appendChild(button);
   });
 
