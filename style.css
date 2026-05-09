@@ -341,13 +341,6 @@ body {
   line-height: 1.4;
 }
 
-.answer-btn:hover {
-  border-color: var(--navy);
-  background: var(--navy);
-  color: var(--white);
-  transform: translateX(4px);
-}
-
 /* ── LOADING SCREEN ───────────────────────────────────────── */
 #loading-screen {
   position: fixed;
