@@ -327,9 +327,9 @@ body {
 }
 
 .answer-btn {
-  background: var(--white);
+  background: var(--white) !important;
+  color: var(--text-body) !important;
   border: 1.5px solid var(--gray-light);
-  color: var(--text-body);
   padding: 18px 22px;
   border-radius: var(--radius-md);
   cursor: pointer;
