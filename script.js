@@ -145,7 +145,7 @@ function showQuestion() {
 
     button.addEventListener("pointerleave", () => {
     button.style.background = "";
-    button.style.color = "";
+    button.style.color = "var(--text-body)";
     button.style.borderColor = "";
     button.style.transform = "";
     });
@@ -159,6 +159,12 @@ function showQuestion() {
 }
 
 function selectAnswer(value) {
+    document.querySelectorAll(".answer-btn").forEach(btn => {
+    btn.style.background = "";
+    btn.style.color = "";
+    btn.style.borderColor = "";
+    btn.style.transform = "";
+  });
 
   totalScore += value;
 
