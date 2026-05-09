@@ -555,7 +555,7 @@ button:hover {
 @media (hover: hover) {
   .answer-btn:hover {
     border-color: var(--navy);
-    background: var(--navy);
+    background: var(--white);
     color: var(--white);
     transform: translateX(4px);
   }
