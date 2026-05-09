@@ -551,3 +551,12 @@ button:hover {
 
   .logo { width: 120px; }
 }
+
+@media (hover: hover) {
+  .answer-btn:hover {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+    transform: translateX(4px);
+  }
+}

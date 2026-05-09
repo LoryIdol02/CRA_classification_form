@@ -136,20 +136,6 @@ function showQuestion() {
 
     button.innerText = answer.text;
 
-    button.addEventListener("pointerenter", () => {
-    button.style.background = "var(--navy)";
-    button.style.color = "var(--white)";
-    button.style.borderColor = "var(--navy)";
-    button.style.transform = "translateX(4px)";
-    });
-
-    button.addEventListener("pointerleave", () => {
-    button.style.background = "";
-    button.style.color = "var(--text-body)";
-    button.style.borderColor = "";
-    button.style.transform = "";
-    });
-
     button.onclick = () => selectAnswer(answer.value);
 
     answersEl.appendChild(button);
