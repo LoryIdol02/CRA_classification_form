@@ -552,11 +552,13 @@ button:hover {
   .logo { width: 120px; }
 }
 
+/* Applica l'effetto solo su dispositivi che hanno un puntatore preciso (MOUSe) 
+   e che supportano l'hover reale */
 @media (hover: hover) and (pointer: fine) {
   .answer-btn:hover {
+    background-color: var(--navy) !important;
+    color: var(--white) !important;
     border-color: var(--navy);
-    background: var(--navy-mid); /* Cambiato per visibilità */
-    color: var(--white);
     transform: translateX(4px);
   }
 }

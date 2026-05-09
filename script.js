@@ -125,13 +125,13 @@ function showQuestion() {
   questionEl.innerText = current.question;
   answersEl.innerHTML = "";
 
-  current.answers.forEach(answer => {
+    current.answers.forEach(answer => {
     const button = document.createElement("button");
     button.classList.add("answer-btn");
     button.innerText = answer.text;
 
-    // RESET DELLO STILE INLINE (Per sicurezza su mobile)
-    button.style.backgroundColor = "";
+    // Rimuoviamo eventuali stili inline che bloccherebbero l'hover del CSS
+    button.style.backgroundColor = ""; 
     button.style.color = "";
 
     button.onclick = () => selectAnswer(answer.value);
